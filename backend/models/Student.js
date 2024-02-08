@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 const StudentSchema = new mongoose.Schema({
     name: {
@@ -36,6 +38,14 @@ StudentSchema.pre('save', async function (next) {
 })
 StudentSchema.methods.comparePassword = async function (canditatePassword) {
     return await bcrypt.compare(canditatePassword, this.password)
+}
+
+StudentSchema.methods.JwtToken = async function () {
+    return await jwt.sign(
+        { name: this.name, email: this.email },
+        process.env.JWT_SECRET,
+        { expiresIn: process.env.JWT_EXPIRE }
+    )
 }
 
 module.exports = mongoose.model('Student', StudentSchema)

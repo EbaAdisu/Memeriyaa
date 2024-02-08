@@ -41,8 +41,9 @@ const signin = async (req, res) => {
     if (!isPasswordCorrect) {
         throw new BadRequestError('Invalid Credentials')
     }
+    const token = await user.JwtToken()
 
-    res.status(StatusCodes.OK).json({ user })
+    res.status(StatusCodes.OK).json({ user, token })
 }
 
 module.exports = {

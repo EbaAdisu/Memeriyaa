@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 const AdminSchema = new mongoose.Schema({
     name: {
@@ -37,4 +39,11 @@ AdminSchema.methods.comparePassword = async function (canditatePassword) {
     return await bcrypt.compare(canditatePassword, this.password)
 }
 
+AdminSchema.methods.JwtToken = async function () {
+    return await jwt.sign(
+        { name: this.name, email: this.email },
+        process.env.JWT_SECRET,
+        { expiresIn: process.env.JWT_EXPIRE }
+    )
+}
 module.exports = mongoose.model('Admin', AdminSchema)
