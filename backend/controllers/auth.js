@@ -17,7 +17,8 @@ const signup = async (req, res) => {
     } else {
         user = await Student.create({ name, email, password })
     }
-    res.status(StatusCodes.CREATED).json(user)
+    const token = await user.JwtToken()
+    res.status(StatusCodes.CREATED).json({ user, token })
 }
 
 const signin = async (req, res) => {

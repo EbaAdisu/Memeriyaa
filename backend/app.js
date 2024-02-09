@@ -10,7 +10,7 @@ const connectDb = require('./db/connect')
 const authRouter = require('./routes/auth')
 
 // Middlewares
-
+const authMiddleware = require('./middlewares/authentication')
 const errorHandler = require('./middlewares/error-handler')
 const notFound = require('./middlewares/not-found')
 
