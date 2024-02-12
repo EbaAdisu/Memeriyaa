@@ -8,6 +8,7 @@ const connectDb = require('./db/connect')
 
 // Import Routers
 const authRouter = require('./routes/auth')
+const courseRouter = require('./routes/courses')
 
 // Middlewares
 const authMiddleware = require('./middlewares/authentication')
@@ -19,6 +20,7 @@ app.use(express.json())
 
 // Routes
 app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/courses', authMiddleware, courseRouter)
 
 app.use(errorHandler)
 app.use(notFound)

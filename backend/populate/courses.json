@@ -1,0 +1,71 @@
+[
+    {
+        "name": "Python",
+        "description": "Python is a programming language that lets you work quickly and integrate systems more effectively.",
+        "duration": "3 months",
+        "price": 100,
+        "mileStone": [
+            {
+                "name": "Python Basics",
+                "description": "Python Basics",
+                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+            },
+            {
+                "name": "Python Advanced",
+                "description": "Python Advanced",
+                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+            },
+            {
+                "name": "Python Project",
+                "description": "Python Project",
+                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+            }
+        ]
+    },
+    {
+        "name": "Python",
+        "description": "Python is a programming language that lets you work quickly and integrate systems more effectively.",
+        "duration": "3 months",
+        "price": 100,
+        "mileStone": [
+            {
+                "name": "Python Basics",
+                "description": "Python Basics",
+                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+            },
+            {
+                "name": "Python Advanced",
+                "description": "Python Advanced",
+                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+            },
+            {
+                "name": "Python Project",
+                "description": "Python Project",
+                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+            }
+        ]
+    },
+    {
+        "name": "Python",
+        "description": "Python is a programming language that lets you work quickly and integrate systems more effectively.",
+        "duration": "3 months",
+        "price": 100,
+        "mileStone": [
+            {
+                "name": "Python Basics",
+                "description": "Python Basics",
+                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+            },
+            {
+                "name": "Python Advanced",
+                "description": "Python Advanced",
+                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+            },
+            {
+                "name": "Python Project",
+                "description": "Python Project",
+                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+            }
+        ]
+    }
+]
