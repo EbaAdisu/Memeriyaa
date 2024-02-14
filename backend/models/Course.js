@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 const MileStone = require('./MileStone')
 
+const { subject, level, language } = require('./enums')
+
 const CourseSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -15,17 +17,33 @@ const CourseSchema = new mongoose.Schema({
         maxlenght: [200, 'Description should be less than 200'],
     },
     duration: {
-        type: Date,
-        default: Date.now() + 30 * 24 * 60 * 60 * 1000,
+        type: Number,
+        default: 30,
     },
-    mileStone: [MileStone],
+    milestones: [MileStone],
     price: {
         type: Number,
+        min: [0, 'Price should be greater than 0'],
         default: 0,
     },
     rate: {
         type: Number,
         default: 0,
+    },
+    level: {
+        type: String,
+        enum: level,
+        required: [true, 'Please Provide Level'],
+    },
+    subject: {
+        type: String,
+        enum: subject,
+        required: [true, 'Please Provide Subject'],
+    },
+    language: {
+        type: String,
+        enum: language,
+        required: [true, 'Please Provide Language'],
     },
 })
 

@@ -2,9 +2,12 @@
     {
         "name": "Python",
         "description": "Python is a programming language that lets you work quickly and integrate systems more effectively.",
-        "duration": "3 months",
         "price": 100,
-        "mileStone": [
+        "duration": 120,
+        "subject": "Programming",
+        "language": "English",
+        "level": "Beginner",
+        "milestones": [
             {
                 "name": "Python Basics",
                 "description": "Python Basics",
@@ -23,48 +26,340 @@
         ]
     },
     {
-        "name": "Python",
-        "description": "Python is a programming language that lets you work quickly and integrate systems more effectively.",
-        "duration": "3 months",
-        "price": 100,
-        "mileStone": [
+        "name": "JavaScript",
+        "description": "JavaScript is a versatile programming language used for web development.",
+        "price": 80,
+        "duration": 180,
+        "subject": "Web Development",
+        "language": "English",
+        "level": "Intermediate",
+        "milestones": [
             {
-                "name": "Python Basics",
-                "description": "Python Basics",
-                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+                "name": "JavaScript Basics",
+                "description": "JavaScript Basics",
+                "resource": "https://www.udemy.com/course/javascript-basics/"
             },
             {
-                "name": "Python Advanced",
-                "description": "Python Advanced",
-                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+                "name": "DOM Manipulation",
+                "description": "DOM Manipulation",
+                "resource": "https://www.udemy.com/course/dom-manipulation/"
             },
             {
-                "name": "Python Project",
-                "description": "Python Project",
-                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+                "name": "React.js Fundamentals",
+                "description": "React.js Fundamentals",
+                "resource": "https://www.udemy.com/course/reactjs-fundamentals/"
             }
         ]
     },
     {
-        "name": "Python",
-        "description": "Python is a programming language that lets you work quickly and integrate systems more effectively.",
-        "duration": "3 months",
+        "name": "Java",
+        "description": "Java is a versatile and widely-used programming language.",
+        "price": 120,
+        "duration": 90,
+        "subject": "Programming",
+        "language": "English",
+        "level": "Intermediate",
+        "milestones": [
+            {
+                "name": "Java Syntax",
+                "description": "Java Syntax",
+                "resource": "https://www.udemy.com/course/java-syntax/"
+            },
+            {
+                "name": "Object-Oriented Programming in Java",
+                "description": "Object-Oriented Programming in Java",
+                "resource": "https://www.udemy.com/course/oop-java/"
+            },
+            {
+                "name": "Java GUI Programming",
+                "description": "Java GUI Programming",
+                "resource": "https://www.udemy.com/course/java-gui-programming/"
+            }
+        ]
+    },
+    {
+        "name": "Data Science with Python",
+        "description": "Learn data science using Python programming language.",
+        "price": 150,
+        "duration": 30,
+        "subject": "Data Science",
+        "language": "English",
+        "level": "Intermediate",
+        "milestones": [
+            {
+                "name": "Introduction to Data Science",
+                "description": "Introduction to Data Science",
+                "resource": "https://www.udemy.com/course/intro-to-data-science/"
+            },
+            {
+                "name": "Data Analysis with Pandas",
+                "description": "Data Analysis with Pandas",
+                "resource": "https://www.udemy.com/course/data-analysis-with-pandas/"
+            },
+            {
+                "name": "Machine Learning Fundamentals",
+                "description": "Machine Learning Fundamentals",
+                "resource": "https://www.udemy.com/course/ml-fundamentals/"
+            }
+        ]
+    },
+    {
+        "name": "Web Design Fundamentals",
+        "description": "Learn the basics of web design and HTML/CSS.",
+        "price": 60,
+        "duration": 240,
+        "subject": "Web Design",
+        "language": "English",
+        "level": "Beginner",
+        "milestones": [
+            {
+                "name": "Introduction to HTML",
+                "description": "Introduction to HTML",
+                "resource": "https://www.udemy.com/course/html-intro/"
+            },
+            {
+                "name": "CSS Styling",
+                "description": "CSS Styling",
+                "resource": "https://www.udemy.com/course/css-styling/"
+            },
+            {
+                "name": "Responsive Web Design",
+                "description": "Responsive Web Design",
+                "resource": "https://www.udemy.com/course/responsive-web-design/"
+            }
+        ]
+    },
+    {
+        "name": "Machine Learning in Python",
+        "description": "Explore the world of machine learning using Python.",
+        "price": 120,
+        "duration": 150,
+        "subject": "Data Science",
+        "language": "English",
+        "level": "Advanced",
+        "milestones": [
+            {
+                "name": "Introduction to Machine Learning",
+                "description": "Introduction to Machine Learning",
+                "resource": "https://www.udemy.com/course/intro-to-ml/"
+            },
+            {
+                "name": "Deep Learning with TensorFlow",
+                "description": "Deep Learning with TensorFlow",
+                "resource": "https://www.udemy.com/course/deep-learning-tensorflow/"
+            },
+            {
+                "name": "Advanced Machine Learning Projects",
+                "description": "Advanced Machine Learning Projects",
+                "resource": "https://www.udemy.com/course/ml-advanced-projects/"
+            }
+        ]
+    },
+    {
+        "name": "Mobile App Development with React Native",
+        "description": "Build mobile apps using React Native framework.",
+        "price": 90,
+        "duration": 300,
+        "subject": "Mobile App Development",
+        "language": "English",
+        "level": "Intermediate",
+        "milestones": [
+            {
+                "name": "React Native Basics",
+                "description": "React Native Basics",
+                "resource": "https://www.udemy.com/course/react-native-basics/"
+            },
+            {
+                "name": "Building a To-Do App",
+                "description": "Building a To-Do App",
+                "resource": "https://www.udemy.com/course/react-native-todo-app/"
+            },
+            {
+                "name": "Advanced Features in React Native",
+                "description": "Advanced Features in React Native",
+                "resource": "https://www.udemy.com/course/react-native-advanced/"
+            }
+        ]
+    },
+    {
+        "name": "Artificial Intelligence Fundamentals",
+        "description": "Learn the basics of artificial intelligence and machine learning.",
+        "price": 130,
+        "duration": 60,
+        "subject": "Artificial Intelligence",
+        "language": "English",
+        "level": "Intermediate",
+        "milestones": [
+            {
+                "name": "Introduction to AI",
+                "description": "Introduction to AI",
+                "resource": "https://www.udemy.com/course/intro-to-ai/"
+            },
+            {
+                "name": "Natural Language Processing",
+                "description": "Natural Language Processing",
+                "resource": "https://www.udemy.com/course/nlp-fundamentals/"
+            },
+            {
+                "name": "Computer Vision",
+                "description": "Computer Vision",
+                "resource": "https://www.udemy.com/course/computer-vision-fundamentals/"
+            }
+        ]
+    },
+    {
+        "name": "Cybersecurity Basics",
+        "description": "Introduction to cybersecurity principles and practices.",
+        "price": 75,
+        "duration": 45,
+        "subject": "Cyber Security",
+        "language": "English",
+        "level": "Beginner",
+        "milestones": [
+            {
+                "name": "Introduction to Cybersecurity",
+                "description": "Introduction to Cybersecurity",
+                "resource": "https://www.udemy.com/course/cybersecurity-basics/"
+            },
+            {
+                "name": "Network Security",
+                "description": "Network Security",
+                "resource": "https://www.udemy.com/course/network-security-fundamentals/"
+            },
+            {
+                "name": "Ethical Hacking",
+                "description": "Ethical Hacking",
+                "resource": "https://www.udemy.com/course/ethical-hacking-fundamentals/"
+            }
+        ]
+    },
+    {
+        "name": "Angular Framework",
+        "description": "Learn web development with the Angular framework.",
+        "price": 110,
+        "duration": 120,
+        "subject": "Web Development",
+        "language": "English",
+        "level": "Intermediate",
+        "milestones": [
+            {
+                "name": "Angular Basics",
+                "description": "Angular Basics",
+                "resource": "https://www.udemy.com/course/angular-basics/"
+            },
+            {
+                "name": "Building Single Page Applications",
+                "description": "Building Single Page Applications",
+                "resource": "https://www.udemy.com/course/angular-spa/"
+            },
+            {
+                "name": "Advanced Angular Concepts",
+                "description": "Advanced Angular Concepts",
+                "resource": "https://www.udemy.com/course/advanced-angular-concepts/"
+            }
+        ]
+    },
+    {
+        "name": "Cloud Computing Essentials",
+        "description": "Introduction to cloud computing and cloud services.",
+        "price": 90,
+        "duration": 180,
+        "subject": "Cloud Computing",
+        "language": "English",
+        "level": "Intermediate",
+        "milestones": [
+            {
+                "name": "Introduction to Cloud Computing",
+                "description": "Introduction to Cloud Computing",
+                "resource": "https://www.udemy.com/course/cloud-computing-essentials/"
+            },
+            {
+                "name": "Amazon Web Services (AWS)",
+                "description": "Amazon Web Services (AWS)",
+                "resource": "https://www.udemy.com/course/aws-fundamentals/"
+            },
+            {
+                "name": "Microsoft Azure Fundamentals",
+                "description": "Microsoft Azure Fundamentals",
+                "resource": "https://www.udemy.com/course/azure-fundamentals/"
+            }
+        ]
+    },
+    {
+        "name": "Blockchain Basics",
+        "description": "Introduction to blockchain technology and cryptocurrencies.",
         "price": 100,
-        "mileStone": [
+        "duration": 30,
+        "subject": "BlockChain",
+        "language": "English",
+        "level": "Beginner",
+        "milestones": [
             {
-                "name": "Python Basics",
-                "description": "Python Basics",
-                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+                "name": "Introduction to Blockchain",
+                "description": "Introduction to Blockchain",
+                "resource": "https://www.udemy.com/course/blockchain-basics/"
             },
             {
-                "name": "Python Advanced",
-                "description": "Python Advanced",
-                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+                "name": "Cryptocurrencies Explained",
+                "description": "Cryptocurrencies Explained",
+                "resource": "https://www.udemy.com/course/cryptocurrencies-explained/"
             },
             {
-                "name": "Python Project",
-                "description": "Python Project",
-                "resource": "https://www.udemy.com/course/complete-python-bootcamp/"
+                "name": "Smart Contracts",
+                "description": "Smart Contracts",
+                "resource": "https://www.udemy.com/course/smart-contracts-basics/"
+            }
+        ]
+    },
+    {
+        "name": "Game Development with Unity",
+        "description": "Create games using the Unity game development engine.",
+        "price": 130,
+        "duration": 270,
+        "subject": "Game Development",
+        "language": "English",
+        "level": "Intermediate",
+        "milestones": [
+            {
+                "name": "Unity Basics",
+                "description": "Unity Basics",
+                "resource": "https://www.udemy.com/course/unity-basics/"
+            },
+            {
+                "name": "2D Game Development",
+                "description": "2D Game Development",
+                "resource": "https://www.udemy.com/course/unity-2d-game-development/"
+            },
+            {
+                "name": "3D Game Development with Unity",
+                "description": "3D Game Development with Unity",
+                "resource": "https://www.udemy.com/course/unity-3d-game-development/"
+            }
+        ]
+    },
+    {
+        "name": "React.js Fundamentals",
+        "description": "Learn the fundamentals of React.js for building user interfaces.",
+        "price": 75,
+        "duration": 150,
+        "subject": "Web Development",
+        "language": "English",
+        "level": "Intermediate",
+        "milestones": [
+            {
+                "name": "Introduction to React.js",
+                "description": "Introduction to React.js",
+                "resource": "https://www.udemy.com/course/reactjs-fundamentals/"
+            },
+            {
+                "name": "State and Props in React",
+                "description": "State and Props in React",
+                "resource": "https://www.udemy.com/course/reactjs-state-and-props/"
+            },
+            {
+                "name": "React Router and Hooks",
+                "description": "React Router and Hooks",
+                "resource": "https://www.udemy.com/course/react-router-and-hooks/"
             }
         ]
     }

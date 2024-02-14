@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const mileStoneSchema = new mongoose.Schema({
+const MileStoneSchema = new mongoose.Schema({
     // id: {
     //     type: String,
     //     required: [true, 'Please Provide Id'],
@@ -27,4 +27,4 @@ const mileStoneSchema = new mongoose.Schema({
     },
 })
 
-module.expiort = mongoose.model('MileStone', mileStoneSchema)
+module.expiort = MileStoneSchema
