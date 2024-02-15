@@ -45,7 +45,21 @@ const createCourse = async (req, res) => {
 }
 
 const getCourses = async (req, res) => {
-    const courses = await Course.find({})
+    const { subject, level, language, name, sort, fields } = req.query
+    let query = {}
+    if (subject) query.subject = subject.split(',')
+    if (level) query.level = level.split(',')
+    if (language) query.language = language.split(',')
+    if (name) query.name = { $regex: name, $options: 'i' }
+
+    let sorting = '-createdAt'
+    if (sort) sorting = sort.split(',').join(' ')
+
+    let field = ''
+    if (fields) field = fields.split(',').join(' ')
+
+    const courses = await Course.find(query).sort(sorting).select(field)
+    res.status(StatusCodes.OK).json({ length: courses.length, courses })
 }
 const getCourse = async (req, res) => {}
 const updateCourse = async (req, res) => {}
