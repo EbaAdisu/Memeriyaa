@@ -27,4 +27,4 @@ const MileStoneSchema = new mongoose.Schema({
     },
 })
 
-module.expiort = MileStoneSchema
+module.exports = MileStoneSchema

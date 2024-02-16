@@ -19,6 +19,7 @@ const CourseSchema = new mongoose.Schema(
         },
         duration: {
             type: Number,
+            min: [14, 'Duration should be greater than 14 days'],
             default: 30,
         },
         milestones: [MileStone],
@@ -26,6 +27,12 @@ const CourseSchema = new mongoose.Schema(
             type: Number,
             min: [0, 'Price should be greater than 0'],
             default: 0,
+            validate: {
+                validator: function (price) {
+                    return typeof price === 'number'
+                },
+                message: (props) => `${props.value} is not a valid price!`,
+            },
         },
         rate: {
             type: Number,

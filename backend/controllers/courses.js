@@ -1,5 +1,5 @@
 const { StatusCodes } = require('http-status-codes')
-const { BadRequestError } = require('../errors')
+const { BadRequestError, NotFoundError } = require('../errors')
 const Course = require('../models/Course')
 
 const createCourse = async (req, res) => {
@@ -61,9 +61,43 @@ const getCourses = async (req, res) => {
     const courses = await Course.find(query).sort(sorting).select(field)
     res.status(StatusCodes.OK).json({ length: courses.length, courses })
 }
-const getCourse = async (req, res) => {}
-const updateCourse = async (req, res) => {}
-const deleteCourse = async (req, res) => {}
+const getCourse = async (req, res) => {
+    const { id } = req.params
+    const course = await Course.findOne({ _id: id })
+    if (!course) {
+        throw new NotFoundError('Course not found')
+    }
+    res.status(StatusCodes.OK).json({ course })
+}
+const updateCourse = async (req, res) => {
+    const { id } = req.params
+    const { name, description, duration, price, level, subject, language } =
+        req.body
+    let updates = {}
+    if (name) updates.name = name
+    if (description) updates.description = description
+    if (duration) updates.duration = duration
+    if (level) updates.level = level
+    if (subject) updates.subject = subject
+    if (language) updates.language = language
+    if (price !== undefined) updates.price = price
+
+    const course = await Course.findOneAndUpdate({ _id: id }, updates, {
+        new: true,
+        runValidators: true,
+    })
+    if (!course) {
+        throw new NotFoundError('Course not found')
+    }
+    res.status(StatusCodes.OK).json({ course })
+}
+const deleteCourse = async (req, res) => {
+    const { id } = req.params
+    const course = await Course.findById({ _id: id })
+    if (!course) {
+        throw new NotFoundError('Course not found')
+    }
+}
 
 module.exports = {
     getCourses,

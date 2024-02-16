@@ -9,5 +9,6 @@ const {
 } = require('../controllers/courses')
 
 router.route('/').post(createCourse).get(getCourses)
+router.route('/:id').get(getCourse).patch(updateCourse).delete(deleteCourse)
 
 module.exports = router
