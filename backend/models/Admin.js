@@ -4,11 +4,18 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
 const AdminSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: [true, 'Please Provide Username'],
+        unique: true,
+        minlength: [3, 'Username should be greater than 3 in length'],
+        maxlenght: [20, 'Name should be less than 20'],
+    },
     name: {
         type: String,
         required: [true, 'Please Provide Name'],
         minlength: [3, 'Name should be greater than 3 in length'],
-        maxlenght: [20, 'Name should be less than 20'],
+        maxlenght: [50, 'Name should be less than 50'],
     },
     email: {
         type: String,
@@ -41,7 +48,13 @@ AdminSchema.methods.comparePassword = async function (canditatePassword) {
 
 AdminSchema.methods.JwtToken = async function () {
     return await jwt.sign(
-        { name: this.name, email: this.email },
+        {
+            id: this._id,
+            username: this.username,
+            name: this.name,
+            email: this.email,
+            role: this.role,
+        },
         process.env.JWT_SECRET,
         { expiresIn: process.env.JWT_EXPIRE }
     )

@@ -10,6 +10,8 @@ const auth = async (req, res, next) => {
     try {
         const payload = jwt.verify(token, process.env.JWT_SECRET)
         req.user = {
+            id: payload.id,
+            username: payload.username,
             name: payload.name,
             email: payload.email,
             role: payload.role,

@@ -1,22 +1,33 @@
 const Instructor = require('../models/Instructor')
 const Student = require('../models/Student')
 const Admin = require('../models/Admin')
+const User = require('../models/User')
 const { BadRequestError } = require('../errors')
 const { StatusCodes } = require('http-status-codes')
 
 const signup = async (req, res) => {
-    const { name, email, password, role } = req.body
-    if (!name || !email || !password) {
+    const { username, name, email, password, role } = req.body
+    if (!username || !name || !email || !password) {
         throw new BadRequestError('Please Provide all the fields')
     }
-    let user
-    if (role === 'Admin') {
-        user = await Admin.create({ name, email, password })
-    } else if (role === 'Instructor') {
-        user = await Instructor.create({ name, email, password })
-    } else {
-        user = await Student.create({ name, email, password })
+    if (role !== 'Admin' && role !== 'Instructor' && role !== 'Student') {
+        throw new BadRequestError('Please Provide a valid role')
     }
+
+    let user
+    let generalUser = await User.findOne({ username })
+    if (generalUser) {
+        throw new BadRequestError('Username already exists')
+    }
+
+    if (role === 'Admin') {
+        user = await Admin.create({ username, name, email, password })
+    } else if (role === 'Instructor') {
+        user = await Instructor.create({ username, name, email, password })
+    } else {
+        user = await Student.create({ username, name, email, password })
+    }
+    await User.create({ username, role })
     const token = await user.JwtToken()
     res.status(StatusCodes.CREATED).json({ user, token })
 }
