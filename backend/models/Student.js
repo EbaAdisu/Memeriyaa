@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
+const PersonalCourseSchema = require('./PersonalCourseSchema')
 
 const StudentSchema = new mongoose.Schema({
     username: {
@@ -31,6 +32,18 @@ const StudentSchema = new mongoose.Schema({
         required: [true, 'Please Provide Password'],
         minlength: [6, 'Name should be equal or greater than 6 in length'],
         maxlenght: [71, 'Name should be less than 72'],
+    },
+    bio: {
+        type: String,
+    },
+    premium: {
+        type: Boolean,
+        default: false,
+    },
+    courses: [PersonalCourseSchema],
+    forum: {
+        type: [mongoose.Schema.Types.ObjectId],
+        default: [],
     },
     role: {
         type: String,
