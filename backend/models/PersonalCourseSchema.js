@@ -39,6 +39,7 @@ const PersonalCourseSchema = new mongoose.Schema({
     },
     totalmilestones: {
         type: Number,
+        default: 1,
     },
     milestones: [MileStoneSchema],
 })

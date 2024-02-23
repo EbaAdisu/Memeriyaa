@@ -6,6 +6,7 @@ require('dotenv').config()
 const AdminSchema = new mongoose.Schema({
     username: {
         type: String,
+        trim: true,
         required: [true, 'Please Provide Username'],
         unique: true,
         minlength: [3, 'Username should be greater than 3 in length'],
@@ -13,12 +14,14 @@ const AdminSchema = new mongoose.Schema({
     },
     name: {
         type: String,
+        trim: true,
         required: [true, 'Please Provide Name'],
         minlength: [3, 'Name should be greater than 3 in length'],
         maxlenght: [50, 'Name should be less than 50'],
     },
     email: {
         type: String,
+        trim: true,
         required: [true, 'Please Provide Email'],
         match: [
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,

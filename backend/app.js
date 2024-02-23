@@ -9,7 +9,8 @@ const connectDb = require('./db/connect')
 // Import Routers
 const authRouter = require('./routes/auth')
 const courseRouter = require('./routes/courses')
-
+const studentRouter = require('./routes/students')
+const userRouter = require('./routes/users')
 // Middlewares
 const authMiddleware = require('./middlewares/authentication')
 const errorHandler = require('./middlewares/error-handler')
@@ -21,6 +22,8 @@ app.use(express.json())
 // Routes
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/courses', authMiddleware, courseRouter)
+app.use('/api/v1/students', authMiddleware, studentRouter)
+app.use('/api/v1/users', userRouter)
 
 app.use(errorHandler)
 app.use(notFound)
