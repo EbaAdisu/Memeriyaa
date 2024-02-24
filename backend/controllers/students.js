@@ -34,6 +34,15 @@ const updateStudent = async (req, res) => {
     res.status(StatusCodes.OK).json({ student })
 }
 
+const deleteStudent = async (req, res) => {
+    const { id } = req.params
+    const student = await Student.findOneAndDelete({ _id: id })
+    if (!student) {
+        throw new NotFoundError('Student not found')
+    }
+    res.status(StatusCodes.OK).json({ student })
+}
+
 const updateUsername = async (req, res) => {
     const { id } = req.params
     const { username } = req.body
@@ -62,12 +71,28 @@ const updateUsername = async (req, res) => {
     res.status(StatusCodes.OK).json({ student })
 }
 
-const deleteStudent = async (req, res) => {
+const updatePassword = async (req, res) => {
     const { id } = req.params
-    const student = await Student.findOneAndDelete({ _id: id })
-    if (!student) {
-        throw new NotFoundError('Student not found')
-    }
+    const { password } = req.body
+    if (!password) throw new BadRequestError('Invalid Password')
+
+    const student = await Student.findOne({ _id: id })
+    if (!student) throw new NotFoundError('Student Not Found')
+    student.password = password
+    await student.save()
+    res.status(StatusCodes.OK).json({ student })
+}
+
+const buyPremium = async (req, res) => {
+    const { id } = req.params
+    // const { premium } = req.body
+    // if (!premium) throw new BadRequestError('Please provide premium')
+    const student = await Student.findOneAndUpdate(
+        { _id: id },
+        { premium: true },
+        { new: true, runValidators: true }
+    )
+    if (!student) throw new NotFoundError('Student Not Found')
     res.status(StatusCodes.OK).json({ student })
 }
 
@@ -75,6 +100,8 @@ module.exports = {
     getStudents,
     getStudent,
     updateStudent,
-    updateUsername,
     deleteStudent,
+    updateUsername,
+    updatePassword,
+    buyPremium,
 }
